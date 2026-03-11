@@ -39,6 +39,8 @@ export default function AppMain() {
     ]  //Array d'oggetti 
 
 
+    
+
     const [classe, setClasse] = useState('d-none') //Destruttura lo il mio useState: Il primo elemento è la variabile di stato
     const [count, setCount] = useState(0) //Destruttura lo il mio useState: Il primo elemento è la variabile di stato
 
@@ -59,7 +61,7 @@ export default function AppMain() {
 
                     /* Per ogni iterazione aggiungi un tag button */
                     <button key={lang.id} onClick={() => {  //Aggigungo una proprs che ascolta quando il bottono viene cliccato
-
+                        
                         setCount(index) //Se il bottone viene cliccato imposta la variabile di stato 'count' assueme lo stesso valore dell'index
                         setClasse('') //Se il bottone viene cliccato imposta la variabile di stato 'Classe' assueme lo stesso valore di una stringa vuota
 
@@ -78,8 +80,8 @@ export default function AppMain() {
             {/* Card Section */}
             <section className="container">
 
-                {/* Aggiungo una condizione un operatore AND nella classe che restituisce il secondo valore se il primo è vero*/}
-                <div className={classe === '' && 'd-none'}> {/* Se la mia variabile di stato 'classe' ha è uguale ad una stringa vuota la classe di questo div diventa 'd-none */}
+                {/* Aggiungo una condizione un operatore TERNARIO */}
+                <div className={classe === '' ? 'd-none' : 'card'}> {/* Se la mia variabile di stato 'classe' ha è uguale ad una stringa vuota la classe di questo div diventa 'd-none */}
                     <h2>Nessun Linguaggio Selezionato</h2>
                 </div>
 
@@ -91,12 +93,14 @@ export default function AppMain() {
 
 
             </section>
+            
+            
         </main>
 
     )
 
-
-
+    
+    
 
 }
 
