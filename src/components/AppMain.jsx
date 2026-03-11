@@ -37,7 +37,7 @@ export default function AppMain() {
 
     return (
 
-        /* MAIN */
+        /* Main */
         <main>
             <div className="buttons">
                 {languages.map(lang => (
@@ -46,6 +46,16 @@ export default function AppMain() {
                     
                 ))}
             </div>
+
+            {/* Card Section */}
+            <section className="container">
+
+                <div className="card">
+                    <h2>Titolo</h2>
+                    <p>Testooooo</p>
+                </div>
+
+            </section>
         </main>
     )
 }
