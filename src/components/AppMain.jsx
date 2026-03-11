@@ -36,8 +36,10 @@ export default function AppMain() {
     ]
     
   
-
+    const [classe, setClasse] = useState('d-none')
     const [count, setCount] = useState(0)
+    
+   
    
    
    
@@ -51,7 +53,9 @@ export default function AppMain() {
             <div className="buttons container">
                 {languages.map((lang, index) => (
 
-                    <button key={lang.id} onClick={() =>{setCount(index)
+                    <button key={lang.id} onClick={() =>{
+                        setCount(index)
+                        setClasse('')
                         
                         /* console.log(lang.id, count) */;
                         
@@ -66,10 +70,13 @@ export default function AppMain() {
 
 
             {/* Card Section */}
-            <section className="container">
+            <section className="container"> 
 
-                <div className="card">
-                    
+                 <div className={classe === '' && 'd-none'}>
+                    <h2>Nessun Linguaggio Selezionato</h2>
+                </div>
+
+                <div className= {`card ${classe}`}>
                     <h2>{languages[count].title}</h2>
                     <p>{languages[count].description}</p>
                 </div>

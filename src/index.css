@@ -20,6 +20,10 @@ h2 {
 
 }
 
+.d-none {
+    display: none;
+}
+
 /*--------HEADER--------*/
 header {
     background-color: rgb(218, 215, 215);
