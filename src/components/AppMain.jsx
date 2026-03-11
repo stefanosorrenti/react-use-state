@@ -37,7 +37,7 @@ export default function AppMain() {
     
   
 
-    const [count, setCounter] = useState(0)
+    const [count, setCount] = useState(0)
    
    
    
@@ -48,12 +48,13 @@ export default function AppMain() {
 
         /* Main */
         <main>
-            <div className="buttons">
-                {languages.map((lang) => (
+            <div className="buttons container">
+                {languages.map((lang, index) => (
 
-                    <button key={lang.id} onClick={() =>{setCounter(lang.id -1)
+                    <button key={lang.id} onClick={() =>{setCount(index)
                         
-                        /* console.log(lang.id, count); */
+                        /* console.log(lang.id, count) */;
+                        
                         
                     } }>{lang.title}</button>
                     
@@ -73,7 +74,7 @@ export default function AppMain() {
                     <p>{languages[count].description}</p>
                 </div>
 
-            
+                
             </section>
         </main>
         

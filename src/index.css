@@ -7,9 +7,55 @@
     font-weight: normal;
 }
 
+h2 {
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+/* UTILITY */
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+
+}
+
 /*--------HEADER--------*/
 header {
     background-color: rgb(218, 215, 215);
     padding: 15px;
      
+}
+
+
+
+/*--------MAIN--------*/
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 50px auto;
+    
+    
+
+}
+
+.buttons button {
+    color: white;
+    background-color: rgb(11, 64, 164);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/*Card*/
+
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    border-radius: 5px;
+    padding: 15px;
 }
