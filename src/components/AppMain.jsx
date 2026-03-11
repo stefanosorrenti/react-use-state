@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useState } from "react" //Importo react hooks
+
 export default function AppMain() {
-    
+
+
     /* DATA */
+
     const languages = [
         {
             id: 1,
@@ -33,63 +36,68 @@ export default function AppMain() {
             title: "ReactJS",
             description: "ReactJS è una libreria JavaScript per costruire interfacce utente, in particolare applicazioni a pagina singola. Consente agli sviluppatori di creare componenti UI riutilizzabili e di gestire efficacemente lo stato dell'applicazione."
         }
-    ]
-    
-  
-    const [classe, setClasse] = useState('d-none')
-    const [count, setCount] = useState(0)
-    
-   
-   
-   
-   
-    
-    
-    
+    ]  //Array d'oggetti 
+
+
+    const [classe, setClasse] = useState('d-none') //Destruttura lo il mio useState: Il primo elemento è la variabile di stato
+    const [count, setCount] = useState(0) //Destruttura lo il mio useState: Il primo elemento è la variabile di stato
+
+
+
+
+
+
+
+
     return (
 
         /* Main */
         <main>
             <div className="buttons container">
-                {languages.map((lang, index) => (
 
-                    <button key={lang.id} onClick={() =>{
-                        setCount(index)
-                        setClasse('')
-                        
-                        /* console.log(lang.id, count) */;
-                        
-                        
-                    } }>{lang.title}</button>
-                    
-                    
-                    
+                {languages.map((lang, index) => ( /* Uso il map per ciclare e restituire degli elementi secondo la mia logica */
+
+                    /* Per ogni iterazione aggiungi un tag button */
+                    <button key={lang.id} onClick={() => {  //Aggigungo una proprs che ascolta quando il bottono viene cliccato
+
+                        setCount(index) //Se il bottone viene cliccato imposta la variabile di stato 'count' assueme lo stesso valore dell'index
+                        setClasse('') //Se il bottone viene cliccato imposta la variabile di stato 'Classe' assueme lo stesso valore di una stringa vuota
+
+                        /* console.log(lang.id, count) */
+
+
+                    }}>{lang.title}</button> //Il bottone deve avere la proprieta title di del rispettivo oggetto iterato
+
+
+
                 ))}
             </div>
-           
+
 
 
             {/* Card Section */}
-            <section className="container"> 
+            <section className="container">
 
-                 <div className={classe === '' && 'd-none'}>
+                {/* Aggiungo una condizione un operatore AND nella classe che restituisce il secondo valore se il primo è vero*/}
+                <div className={classe === '' && 'd-none'}> {/* Se la mia variabile di stato 'classe' ha è uguale ad una stringa vuota la classe di questo div diventa 'd-none */}
                     <h2>Nessun Linguaggio Selezionato</h2>
                 </div>
 
-                <div className= {`card ${classe}`}>
-                    <h2>{languages[count].title}</h2>
+                <div className={`card ${classe}`}> {/* Interpolo la classe con il template literal la variabile di stato 'classe' (che di base ha equaivale a 'd-none')  */}
+
+                    <h2>{languages[count].title}</h2>  {/* Il contenuto di questi tag corrisponde alle chiavi degli elementi all'interno del mio array, , l'indece dell'elemento cambia dinamicamnete */}
                     <p>{languages[count].description}</p>
                 </div>
 
-                
+
             </section>
         </main>
-        
+
     )
 
-    
-    
-    
+
+
+
 }
 
 
