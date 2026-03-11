@@ -1,3 +1,4 @@
+import { useState } from "react"
 export default function AppMain() {
     
     /* DATA */
@@ -33,7 +34,31 @@ export default function AppMain() {
             description: "ReactJS è una libreria JavaScript per costruire interfacce utente, in particolare applicazioni a pagina singola. Consente agli sviluppatori di creare componenti UI riutilizzabili e di gestire efficacemente lo stato dell'applicazione."
         }
     ]
+    
 
+    const [title, setTitle] = useState(0)
+    const [count, setCounter] = useState(0)
+
+   const userCount = useState(0)
+
+   let dynamicCount = userCount[0]
+
+   
+   
+
+
+   
+   
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     return (
 
@@ -41,21 +66,42 @@ export default function AppMain() {
         <main>
             <div className="buttons">
                 {languages.map(lang => (
-
-                    <button key={lang.id}>{lang.title}</button>
                     
+                    <button key={lang.id} onClick={() => {
+                        setCounter(count)
+                        
+                        
+                        dynamicCount = count + lang.id
+                        
+                        console.log(dynamicCount);
+                        
+                        
+                        
+                        
+                    } }>{lang.title}</button>
                 ))}
             </div>
+           
+
 
             {/* Card Section */}
             <section className="container">
 
                 <div className="card">
-                    <h2>Titolo</h2>
-                    <p>Testooooo</p>
+                    
+                    <h2>{languages[dynamicCount].title}</h2>
+                    <p>{languages[dynamicCount].description}</p>
                 </div>
 
+            
             </section>
         </main>
+        
     )
+
+    
+    
+    
 }
+
+
