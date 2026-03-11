@@ -35,50 +35,30 @@ export default function AppMain() {
         }
     ]
     
+  
 
-    const [title, setTitle] = useState(0)
     const [count, setCounter] = useState(0)
-
-   const userCount = useState(0)
-
-   let dynamicCount = userCount[0]
-
-   
-   
-
-
    
    
    
     
     
     
-    
-    
-    
-    
-    
-    
-
     return (
 
         /* Main */
         <main>
             <div className="buttons">
-                {languages.map(lang => (
-                    
-                    <button key={lang.id} onClick={() => {
-                        setCounter(count)
+                {languages.map((lang) => (
+
+                    <button key={lang.id} onClick={() =>{setCounter(lang.id -1)
                         
-                        
-                        dynamicCount = count + lang.id
-                        
-                        console.log(dynamicCount);
-                        
-                        
-                        
+                        console.log(lang.id, count);
                         
                     } }>{lang.title}</button>
+                    
+                    
+                    
                 ))}
             </div>
            
@@ -89,8 +69,8 @@ export default function AppMain() {
 
                 <div className="card">
                     
-                    <h2>{languages[dynamicCount].title}</h2>
-                    <p>{languages[dynamicCount].description}</p>
+                    <h2>{languages[count].title}</h2>
+                    <p>{languages[count].description}</p>
                 </div>
 
             
