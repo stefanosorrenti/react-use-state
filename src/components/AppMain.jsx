@@ -53,7 +53,7 @@ export default function AppMain() {
 
                     <button key={lang.id} onClick={() =>{setCounter(lang.id -1)
                         
-                        console.log(lang.id, count);
+                        /* console.log(lang.id, count); */
                         
                     } }>{lang.title}</button>
                     

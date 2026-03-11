@@ -1,0 +1,15 @@
+/* GENERICS */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    font-weight: normal;
+}
+
+/*--------HEADER--------*/
+header {
+    background-color: rgb(218, 215, 215);
+    padding: 15px;
+     
+}
