@@ -1,5 +1,6 @@
 //COMPONENTS IMPORTS
 import AppHeader from "./components/AppHeader";
+import AppMain from "./components/AppMain";
 
 function App() {
   
@@ -39,6 +40,7 @@ const languages = [
   return (
     <>
     <AppHeader />
+    <AppMain />
       
     </>
   )
